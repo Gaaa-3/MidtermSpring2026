@@ -5,16 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CardTest {
 
-    // --- color() ---
-
     @Test void color_red()   { assertEquals("R", Card.color("R5")); }
     @Test void color_yellow(){ assertEquals("Y", Card.color("Y3")); }
     @Test void color_green() { assertEquals("G", Card.color("G+2")); }
     @Test void color_blue()  { assertEquals("B", Card.color("B0")); }
     @Test void color_wild_isEmpty()         { assertEquals("", Card.color("W")); }
     @Test void color_wildDrawFour_isEmpty() { assertEquals("", Card.color("W4")); }
-
-    // --- rank() ---
 
     @Test void rank_drawTwo_green()  { assertEquals("DRAW_TWO",       Card.rank("G+2")); }
     @Test void rank_skip_red()       { assertEquals("SKIP",           Card.rank("RS")); }
@@ -29,8 +25,6 @@ class CardTest {
     @Test void rank_wild()           { assertEquals("WILD",           Card.rank("W")); }
     @Test void rank_wildDrawFour()   { assertEquals("WILD_DRAW_FOUR", Card.rank("W4")); }
     @Test void rank_number()         { assertEquals("NUMBER",         Card.rank("R5")); }
-
-    // --- points() ---
 
     @Test void points_wildDrawFour() { assertEquals(50, Card.points("W4")); }
     @Test void points_wild()         { assertEquals(50, Card.points("W")); }

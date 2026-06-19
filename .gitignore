@@ -1,1 +1,6 @@
-out/
+target/
+logs/
+*.class
+.idea/
+*.iml
+uno-a5/

@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RulesTest {
 
-    // Legal plays
     @Test void legal_sameColor()              { assertTrue(Rules.isLegal("R2",  "R9",  "")); }
     @Test void legal_sameNumber()             { assertTrue(Rules.isLegal("G9",  "R9",  "")); }
     @Test void legal_sameNumberAcrossColors() { assertTrue(Rules.isLegal("B9",  "R9",  "")); }
@@ -24,7 +23,6 @@ class RulesTest {
     @Test void legal_drawTwoAcrossColors()    { assertTrue(Rules.isLegal("Y+2", "R+2", "")); }
     @Test void legal_matchesCalledColor()     { assertTrue(Rules.isLegal("G5",  "W",   "G")); }
 
-    // Illegal plays
     @Test void illegal_colorAndNumberMismatch() { assertFalse(Rules.isLegal("B3", "R9", "")); }
     @Test void illegal_wrongCalledColor()       { assertFalse(Rules.isLegal("R3", "W",  "G")); }
     @Test void illegal_wrongCalledColorNumber() { assertFalse(Rules.isLegal("R5", "W",  "G")); }
